@@ -24,7 +24,7 @@ Print () {
 
 ### Status Fuction
 Stat () {
-  echo -e "\n \e[1,34m [INFO] \e[0m--------------------------------------------------"
+  echo -e "\n\e[1,34m [INFO] \e[0m--------------------------------------------------"
   if [ $1 -eq 0 ]; then
     echo -e "\e[1,34m [INFO] \e[1;32m [SUCCESS] \e[0m"
   else
