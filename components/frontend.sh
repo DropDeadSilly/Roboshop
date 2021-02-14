@@ -1,6 +1,14 @@
 #!/bin/bash
 
-yum install nginx -y
+COMPONENT=FrontEnd
+
+source common.sh
+
+Print "Installing Ngnix"
+#yum install nginx -y
+
+Print "Enabling Ngnix Service"
+exit
 systemctl enable nginx
 systemctl start nginx
 
