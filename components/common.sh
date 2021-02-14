@@ -10,7 +10,24 @@ if [ "$USER_ID" -ne 0 ]; then
   exit 1
 fi
 
-###
+### Printing Syntax with Linux based format
+#Print () {
+#  echo -e "\e[1m $(date +%c) \e[35m $(hostname) \e[0m \e[1,31m ${COMPONENT} \e[0m :: $1"
+#}
+
+### Printing Syntax with Maven based format
 Print () {
-  echo -e "\e[1m $(date +%c) \e[35m $(hostname) \e[0m \e[1,31m ${COMPONENT} :: $1"
+  echo -e "\e[1,34m [INFO] \e[0m-------------------------< $1 >-------------------------"
+  echo -e "\e[1,34m [INFO] \e[0m \e[1m $2 \e[0m"
+  echo -e "\e[1,34m [INFO] \e[0m--------------------------------------------------"
+}
+
+### Status Fuction
+Stat () {
+  echo -e "\e[1,34m [INFO] \e[0m--------------------------------------------------"
+  if [ $1 -eq 0 ]; then
+    echo -e "\e[1,34m [INFO] \e[1;32m [SUCCESS] \e[0m"
+  else
+    echo -e "\e[1,34m [INFO] \e[1;31m [FAILURE] \e[0m"
+  fi
 }
