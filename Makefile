@@ -5,13 +5,13 @@ common:
 	@sh components/common.sh
 
 cart: common
-cart: 					###	Install Cart Components
+cart: 			###	Install Cart Components
 	@sh components/cart.sh
 
 catalogue: common
-catalogue: 				###	Install Catalogue Components
+catalogue: 		###	Install Catalogue Components
 	@sh components/catalogue.sh
 
 frontend: common
-frontend: 				###	Install FrontEnd Components
+frontend: 		###	Install FrontEnd Components
 	@sh components/frontend.sh
