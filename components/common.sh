@@ -29,6 +29,7 @@ Stat () {
     echo -e "\e[1,34m [INFO] \e[1;32m [SUCCESS] \e[0m"
   else
     echo -e "\e[1,34m [INFO] \e[1;31m [FAILURE] \e[0m"
+    exit 2
   fi
   echo -e "\e[1,34m [INFO] \e[0m--------------------------------------------------\n"
 }
