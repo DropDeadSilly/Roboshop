@@ -15,6 +15,7 @@ Stat $?
 
 Print "Update Redis Config" "sed -i -e 's/127.0.0.1/0.0.0.0' /etc/redis.conf"
 sed -i -e 's/127.0.0.1/0.0.0.0' /etc/redis.conf
+Stat $?
 
 Print "Restarting Redis service" "systemctl enable redis && systemctl restart redis"
 systemctl enable redis && systemctl restart redis
