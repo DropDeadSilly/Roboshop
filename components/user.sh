@@ -25,7 +25,7 @@ npm install --unsafe-perm
 Stat $?
 
 Print "Update SystemD script for User" "sed -i -e 's/MONGO_DNSNAME/mongodb-ss.dropdeadsilly.xyz/' /home/roboshop/user/systemd.service && mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service"
-sed -i -e 's//-ss.dropdeadsilly.xyz/' /home/roboshop/user/systemd.service && mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
+sed -i -e 's//mongodb.dropdeadsilly.xyz/' /home/roboshop/user/systemd.service && mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
 Stat $?
 
 Print "Start User Service" "systemctl daemon-reload && systemctl restart user && systemctl enable user"

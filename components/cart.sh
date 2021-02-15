@@ -25,7 +25,7 @@ npm install --unsafe-perm
 Stat $?
 
 Print "Update SystemD script for Cart" "sed -i -e 's/MONGO_DNSNAME/mongodb-ss.dropdeadsilly.xyz/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service"
-sed -i -e 's//-ss.dropdeadsilly.xyz/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
+sed -i -e 's//mongodb-ss.dropdeadsilly.xyz/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
 Stat $?
 
 Print "Start Cart Service" "systemctl daemon-reload && systemctl restart cart && systemctl enable cart"
