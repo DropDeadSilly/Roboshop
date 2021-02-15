@@ -2,6 +2,8 @@
 
 COMPONENT=mongodb
 
+source components/common.sh
+
 Print "Setup MongoDB Repo" "Downlaod URL --XXX--"
 echo '[mongodb-org-4.2]
 name=MongoDB Repository
