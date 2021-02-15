@@ -17,5 +17,5 @@ frontend: 		###	Install FrontEnd Components
 	@sh components/frontend.sh
 
 mongodb: common
-mongodb:	 		###	Install Catalogue Components
+mongodb:	 	###	Install Catalogue Components
 	@sh components/mongodb.sh
