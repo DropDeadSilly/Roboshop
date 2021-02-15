@@ -16,6 +16,14 @@ frontend: common
 frontend: 		###	Install FrontEnd Components
 	@sh components/frontend.sh
 
-mongodb: common
-mongodb:	 	###	Install Catalogue Components
-	@sh components/mongodb.sh
+user: common
+user:	 	###	Install User Components
+	@sh components/user.sh
+
+redis: common
+redis:	 	###	Install Redis Components
+	@sh components/redis.sh
+
+mysql: common
+mysql:	 	###	Install MySQL Database Components
+	@sh components/mysql.sh
