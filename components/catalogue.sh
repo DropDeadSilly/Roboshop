@@ -26,7 +26,7 @@ Stat $?
 
 chown roboshop:roboshop /home/roboshop/ -R
 
-Print "Update SystemD script for Catalogue" "sed -i -e 's/MONGO_DNSNAME/mongodb-ss.dropdeadsilly.xyz/' /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service"
+Print "Update SystemD script for Catalogue" "sed -i -e 's/MONGO_DNSNAME/mongodb-ss.dropdeadsily.xyz/' /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service"
 sed -i -e 's/MONGO_DNSNAME/mongodb-ss.dropdeadsilly.xyz/' /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 Stat $?
 
