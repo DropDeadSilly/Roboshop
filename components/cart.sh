@@ -24,6 +24,8 @@ Print "Install NodeJS Dependencies" "npm install"
 npm install --unsafe-perm
 Stat $?
 
+chown roboshop:roboshop /home/roboshop -R
+
 Print "Update SystemD script for Cart" "sed -i -e 's/REDIS_ENDPOINT/redis-ss.dropdeadsilly.xyz/' -e 's/CATALOGUE_ENDPOINT/catalogue-ss.dropdeadsilly.xyz/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service"
 sed -i -e 's/REDIS_ENDPOINT/redis-ss.dropdeadsilly.xyz/' -e 's/CATALOGUE_ENDPOINT/catalogue-ss.dropdeadsilly.xyz/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
 Stat $?
