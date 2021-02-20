@@ -12,11 +12,6 @@ if [ $? -ne 0 ]; then
   Stat $?
 fi
 
-Print "Install Redis Repos" "yum install epel-release yum-utils -y && # yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y"
-yum install epel-release yum-utils -y
-yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
-Stat $?
-
 Print "Enabling Redis Repos" "yum-config-manager --enable remi && yum install redis -y"
 yum-config-manager --enable remi && yum install redis -y
 Stat $?
