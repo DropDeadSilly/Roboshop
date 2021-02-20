@@ -28,6 +28,6 @@ mysql: common
 mysql:	 	###	Install MySQL Database Components
 	@sh components/mysql.sh
 
-mysql: common
-mysql:	 	###	Install MongoDB Database Components
+mongodb: common
+mongodb:	 	###	Install MongoDB Database Components
 	@sh components/mongodb.sh
