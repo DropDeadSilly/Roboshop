@@ -26,8 +26,10 @@ Stat $?
   DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
   Stat $?
 
+  echo "DEFAULT_PASSWORD=$(DEFAULT_PASSWORD)"
+
   Print "Reset MYSQL Password" ""
-  mysql --connect-expired-password -uroot -p"{DEFAULT_PASSWORD}" <<EOF
+  mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
   ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_Roboshop*123';
   uninstall plugin validate_password;
   ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
