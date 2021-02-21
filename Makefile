@@ -24,9 +24,9 @@ redis: common
 redis:	 	###	Install Redis Components
 	@sh components/redis.sh
 
-mysql: common
-mysql:	 	###	Install MySQL Database Components
-	@sh components/mysql.sh
+mysqldb: common
+mysqldb:	 	###	Install MySQL Database Components
+	@sh components/mysqldb.sh
 
 mongodb: common
 mongodb:	 	###	Install MongoDB Database Components
