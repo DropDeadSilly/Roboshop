@@ -20,10 +20,6 @@ Print "Starting MySQL Service" "systemctl enable mysqld && systemctl start mysql
 systemctl enable mysqld && systemctl start mysqld
 Stat $?
 
-
-
-echo DEFAULT_PASSWORD= $DEFAULT_PASSWORD
-
 echo "show databases;" | mysql -uroot -ppassword &>/dev/null
 if [ $? -ne 0 ]; then
   Print "Grab Default MySQL Password" "grep temp /var/log/mysqld.log"
