@@ -4,7 +4,7 @@ COMPONENT=mysqldb
 
 source components/common.sh
 
-Print "Setup MySQL Repo" "-----"
+Print "Setup MySQL Repo" ""
 echo '[mysql57-community]
 name=MySQL 5.7 Community Server
 baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/
@@ -12,12 +12,13 @@ enabled=1
 gpgcheck=0' > /etc/yum.repos.d/mysql.repo
 Stat $?
 
-Print "Install MySQL" "yum remove mariadb-libs -y && yum install mysql-community-server -y "
+Print "Install MySQL" "yum remove mariadb-libs -y && yum install mysql-community-server -y"
 yum remove mariadb-libs -y && yum install mysql-community-server -y
 Stat $?
 
-Print "Starting MySQL Service" "systemctl enable mysqld && systemctl start mysqld"
-systemctl enable mysqld && systemctl start mysqld
+Print "Start MySQL Server" "systemctl enable mysqld  && systemctl start mysqld"
+systemctl enable mysqld
+systemctl start mysqld
 Stat $?
 
 #echo "show databases;" | mysql -uroot -ppassword &>/dev/null
@@ -26,11 +27,9 @@ Stat $?
   DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
   Stat $?
 
-  echo "DEFAULT_PASSWORD=$(DEFAULT_PASSWORD)"
-
-  Print "Reset MYSQL Password" ""
+  Print "Reset MySQL Password" ""
   mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
-  ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_Roboshop*123';
+  ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_RoboShop*999';
   uninstall plugin validate_password;
   ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
 EOF
