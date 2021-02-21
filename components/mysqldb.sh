@@ -27,7 +27,7 @@ source components/common.sh
 #  Stat $?
 #
 #  Print "Reset MYSQL Password" ""
-#  mysql -uroot -p"{DEFAULT_PASSWORD}" <<EOF
+#  mysql --connect-expired-password -uroot -p"{DEFAULT_PASSWORD}" <<EOF
 #  ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_Roboshop*123';
 #  uninstall plugin validate_password;
 #  ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
