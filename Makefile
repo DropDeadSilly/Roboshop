@@ -31,3 +31,15 @@ mysqldb:	 	###	Install MySQL Database Components
 mongodb: common
 mongodb:	 	###	Install MongoDB Database Components
 	@sh components/mongodb.sh
+
+shipping: common
+shipping:	 	###	Install MongoDB Database Components
+	@sh components/shipping.sh
+
+rabbitmq: common
+rabbitmq:	 	###	Install MongoDB Database Components
+	@sh components/rabbitmq.sh
+
+payment: common
+payment:	 	###	Install MongoDB Database Components
+	@sh components/payment.sh
