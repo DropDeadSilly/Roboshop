@@ -67,7 +67,7 @@ Stat $?
 
 echo "Test1"
 
-echo "show databases;" | mysql -uroot -ppassword &>/dev/null
+#echo "show databases;" | mysql -uroot -ppassword &>/dev/null
 
 echo "Test2"
 
