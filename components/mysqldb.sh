@@ -23,7 +23,7 @@ Stat $?
 #echo "show databases;" | mysql -uroot -ppassword &>/dev/null
 #if [ $? -ne 0 ]; then
   Print "Grab Default MySQL Password" "grep temp /var/log/mysqld.log"
-  DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF')
+  DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF'})
   Stat $?
 
   Print "Reset MYSQL Password" ""
