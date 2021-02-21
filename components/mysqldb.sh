@@ -20,14 +20,30 @@ Print "Starting MySQL Service" "systemctl enable mysqld && systemctl start mysql
 systemctl enable mysqld && systemctl start mysqld
 Stat $?
 
+#echo "show databases;" | mysql -uroot -ppassword &>/dev/null
+#if [ $? -ne 0 ]; then
+#  Print "Grab Default MySQL Password" "grep temp /var/log/mysqld.log"
+#  DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF')
+#  Stat $?
+#
+#  Print "Reset MYSQL Password" ""
+#  mysql -uroot -p"{DEFAULT_PASSWORD}" <<EOF
+#  ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_Roboshop*123';
+#  uninstall plugin validate_password;
+#  ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+#EOF
+#  Stat $?
+#fi
+
 echo "show databases;" | mysql -uroot -ppassword &>/dev/null
 if [ $? -ne 0 ]; then
   Print "Grab Default MySQL Password" "grep temp /var/log/mysqld.log"
-  DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF')
+  DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
   Stat $?
-  Print "Reset MYSQL Password" ""
-  mysql -uroot -p"{DEFAULT_PASSWORD}" <<EOF
-  ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_Roboshop*123';
+
+  Print "Reset MySQL Password" ""
+  mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
+  ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_RoboShop*999';
   uninstall plugin validate_password;
   ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
 EOF
