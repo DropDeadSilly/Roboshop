@@ -71,7 +71,7 @@ echo "Test1"
 
 echo "Test2"
 
-if [ $? -ne 0 ]; then
+#if [ $? -ne 0 ]; then
   Print "Grab Default MySQL Password" "grep temp /var/log/mysqld.log"
   DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
   Stat $?
@@ -83,7 +83,7 @@ if [ $? -ne 0 ]; then
   ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
 EOF
   Stat $?
-fi
+#fi
 
 echo "Test3"
 
