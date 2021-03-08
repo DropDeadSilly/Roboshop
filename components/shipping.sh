@@ -25,7 +25,7 @@ mvn clean package && mv target/shipping-1.0.jar shipping.jar
 Stat $?
 
 Print "Update SystemD Script for Shipping" 'sed -i -e "s/CARTENDPOINT/cart-ss.dropdeadsilly.xyz/" -e "s/DBHOST/mysql-ss.dropdeadsilly.xyz/" /home/roboshop/shipping/systemd.service'
-sed -i -e "s/CARTENDPOINT/cart-ss.dropdeadsilly.xyz/" -e "s/DBHOST/mysql-ss.dropdeadsilly.xyz/" /home/roboshop/shipping/systemd.service
+sed -i -e "s/CARTENDPOINT/cart-ss.dropdeadsilly.xyz/" -e "s/DBHOST/mysqldb-ss.dropdeadsilly.xyz/" /home/roboshop/shipping/systemd.service
 Stat $?
 
 chown roboshop:roboshop /home/roboshop -R
